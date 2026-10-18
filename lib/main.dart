@@ -198,36 +198,336 @@ class _MyHomePageState extends State<MyHomePage> {
         ),
       ),
 
-      endDrawer: Drawer(
-        child: Column(
-          children: [
-            Container(
-            width: 375,
-            height: 609,
-            child: Stack(
-              children: [
-                Positioned(
-                  child: Image.asset('Images/Pitt.png', width: 375, height: 286),
-                ),
-                Positioned(
-                  top: 61,
-                  left: 300,
-                  child: Container(
-                    width: 45,
-                    height: 45,
-                    decoration: const BoxDecoration(
-                      color: Colors.white,
-                      shape: BoxShape.circle,
-                      ),
-                    child: Icon(
-                      Icons.shopping_cart_outlined,
+      endDrawer: SizedBox(
+        width: double.infinity,
+        child: Material(
+          color: Color.fromARGB(255, 242, 242, 242),
+          child: Stack(
+            children: [
+              Positioned(
+                top: 0,
+                width: 375,
+                height: 609,
+                child: Stack(
+                  children: [
+                    Positioned(
+                      child: Image.asset('Images/Pitt.png', width: 375, height: 165, fit: BoxFit.fill),
                     ),
-                  ),
-                  ),
-                ],
+                    Positioned(
+                      top: 45,
+                      left: 300,
+                      child: Container(
+                        width: 45,
+                        height: 45,
+                        decoration: const BoxDecoration(
+                          color: Colors.white,
+                          shape: BoxShape.circle,
+                        ),
+                        child: Icon(
+                          Icons.shopping_cart_outlined,
+                        ),
+                      ),
+                    ),
+                    Positioned(
+                      top: 45,
+                      left: 45,
+                      child: Container(
+                        width: 45,
+                        height: 45,
+                        decoration: const BoxDecoration(
+                          color: Colors.white,
+                          shape: BoxShape.circle,
+                        ),
+                        child: IconButton(
+                          icon: Icon(Icons.chevron_left),
+                          onPressed: () => Poloski.currentState?.closeEndDrawer(),
+                        ),
+                      ),
+                    ),
+                    Positioned(
+                      top: 260,
+                      left: 45,
+                      width: 128,
+                      height: 19,
+                      child: Align(
+                        alignment: Alignment.bottomCenter,
+                        child: Text('Сытый Питт', style: GoogleFonts.notoSans(fontSize: 14, fontWeight: FontWeight.bold)),
+                      ),
+                    ),
+                    Positioned(
+                      top: 282,
+                      left: 45,
+                      width: 14,
+                      height: 14,
+                      child: Icon(Icons.star_border),
+                    ),
+                    Positioned(
+                      top: 284,
+                      left: 72,
+                      width: 32,
+                      height: 19,
+                      child: Align(
+                        alignment: Alignment.bottomCenter,
+                        child: Text('4,5', style: GoogleFonts.notoSans(fontSize: 14, fontWeight: FontWeight.bold)),
+                      ),
+                    ),
+                    Positioned(
+                      top: 284,
+                      left: 104,
+                      width: 48,
+                      height: 19,
+                      child: Align(
+                        alignment: Alignment.bottomCenter,
+                        child: Text('(100+)', style: GoogleFonts.notoSans(fontSize: 14, color: const Color(0xFFBDBDBD))),
+                      ),
+                    ),
+                    Positioned(
+                      top: 284,
+                      left: 164,
+                      width: 96,
+                      height: 19,
+                      child: Align(
+                        alignment: Alignment.bottomCenter,
+                        child: Text('25-30 мин', style: GoogleFonts.notoSans(fontSize: 14, fontWeight: FontWeight.bold)),
+                      ),
+                    ),
+                    Positioned(
+                      top: 284,
+                      left: 263,
+                      width: 16,
+                      height: 19,
+                      child: Align(
+                        alignment: Alignment.bottomCenter,
+                        child: Text('₽', style: GoogleFonts.notoSans(fontSize: 14)),
+                      ),
+                    ),
+                    Positioned(
+                      top: 269,
+                      left: 275,
+                      width: 72,
+                      height: 44,
+                      child: Align(
+                        alignment: Alignment.topCenter,
+                        child: Text('300', style: GoogleFonts.notoSans(fontSize: 32, fontWeight: FontWeight.bold)),
+                      ),
+                    ),
+                    Positioned(
+                      top: 446,
+                      left: 45,
+                      width: 285,
+                      child: Container(
+                        width: 285,
+                        height: 45,
+                        decoration: const BoxDecoration(
+                          color: Color(0xFFF2C94C),
+                          shape: BoxShape.rectangle,
+                          borderRadius: BorderRadius.all(
+                            Radius.elliptical(20, 20),
+                          ),
+                        ),
+                        child: Align(
+                          alignment: Alignment.center,
+                          child: Text(
+                            'Купить',
+                            textAlign: TextAlign.center,
+                            style: GoogleFonts.notoSans(
+                              fontSize: 16,
+                              fontWeight: FontWeight.bold,
+                            ),
+                          ),
+                        ),
+                      ),
+                    ),
+                    Positioned(
+                      top: 300,
+                      left: 60,
+                      width: 285,
+                      height: 128,
+                      child: Align(
+                        alignment: Alignment.bottomLeft,
+                        child: Text('Et consectetur commodo ut consectetur ex\nnulla voluptate commodo ipsum incididunt qui\ndolor.', style: GoogleFonts.notoSans(fontSize: 14)),
+                      ),
+                    ),
+                    Positioned(
+                      top: 500,
+                      left: 33,
+                      width: 128,
+                      height: 32,
+                      child: Align(
+                        alignment: Alignment.bottomLeft,
+                        child: Text('Дополнительно', style: GoogleFonts.notoSans(fontSize: 14, fontWeight: FontWeight.bold)),
+                      ),
+                    ),
+                    Positioned(
+                      top: 500,
+                      left: 168,
+                      width: 128,
+                      height: 32,
+                      child: Align(
+                        alignment: Alignment.bottomLeft,
+                        child: Text('Похожие', style: GoogleFonts.notoSans(fontSize: 14, fontWeight: FontWeight.bold, color: const Color(0xFF828282))),
+                      ),
+                    ),
+                    Positioned(
+                      top: 500,
+                      left: 256,
+                      width: 128,
+                      height: 32,
+                      child: Align(
+                        alignment: Alignment.bottomLeft,
+                        child: Text('Отзывы', style: GoogleFonts.notoSans(fontSize: 14, fontWeight: FontWeight.bold, color: const Color(0xFF828282))),
+                      ),
+                    ),
+                    Positioned (
+                      top: 556,
+                      left: 33,
+                      child: const SizedBox(
+                        width: 50,
+                        child: Divider(
+                        color: Colors.black,
+                        thickness: 2,
+                          ),
+                      ),
+                    ),
+                    Positioned(
+                      top: 228,
+                      left: 300,
+                      width: 24,
+                      height: 24,
+                      child: Icon(Icons.favorite_outline),
+                    ),
+                  ],
+                ),
               ),
-            ),
-          ],
+              Positioned(
+                top: 580,
+                left: 0,
+                right: 0,
+                bottom: 0,
+                child: ListView(
+                  children: [
+                    Container(
+                      height: 228,
+                      color: Color.fromARGB(255, 242, 242, 242),
+                      child: Stack(
+                        children: [
+                          Positioned(
+                            top: 0,
+                            left: 75,
+                            width: 285,
+                            height: 32,
+                            child: Align(
+                              alignment: Alignment.bottomLeft,
+                              child: Text('Просто кофе', style: GoogleFonts.notoSans(fontSize: 14, fontWeight: FontWeight.bold)),
+                            ),
+                          ),
+                          Positioned(
+                            top: 0,
+                            left: 232,
+                            width: 285,
+                            height: 32,
+                            child: Align(
+                              alignment: Alignment.bottomLeft,
+                              child: Text('200 руб', style: GoogleFonts.notoSans(fontSize: 14, fontWeight: FontWeight.bold)),
+                            ),
+                          ),
+                          Positioned(
+                            top: 20,
+                            left: 75,
+                            width: 285,
+                            height: 32,
+                            child: Align(
+                              alignment: Alignment.bottomLeft,
+                              child: Text('Вкусный зерновой кофеечек', style: GoogleFonts.notoSans(fontSize: 14, color: const Color(0xFF828282))),
+                            ),
+                          ),
+                          Positioned(
+                            left: 8,
+                            top: 0,
+                            child: Image.asset('Images/coffee.png', width: 61, height: 61),
+                          ),
+
+
+                          Positioned(
+                            top: 70,
+                            left: 75,
+                            width: 285,
+                            height: 32,
+                            child: Align(
+                              alignment: Alignment.bottomLeft,
+                              child: Text('Просто кофе', style: GoogleFonts.notoSans(fontSize: 14, fontWeight: FontWeight.bold)),
+                            ),
+                          ),
+                          Positioned(
+                            top: 70,
+                            left: 232,
+                            width: 285,
+                            height: 32,
+                            child: Align(
+                              alignment: Alignment.bottomLeft,
+                              child: Text('200 руб', style: GoogleFonts.notoSans(fontSize: 14, fontWeight: FontWeight.bold)),
+                            ),
+                          ),
+                          Positioned(
+                            top: 90,
+                            left: 75,
+                            width: 285,
+                            height: 32,
+                            child: Align(
+                              alignment: Alignment.bottomLeft,
+                              child: Text('Вкусный зерновой кофеечек', style: GoogleFonts.notoSans(fontSize: 14, color: const Color(0xFF828282))),
+                            ),
+                          ),
+                          Positioned(
+                            left: 8,
+                            top: 70,
+                            child: Image.asset('Images/coffee.png', width: 61, height: 61),
+                          ),
+
+
+                          Positioned(
+                            top: 140,
+                            left: 75,
+                            width: 285,
+                            height: 32,
+                            child: Align(
+                              alignment: Alignment.bottomLeft,
+                              child: Text('Просто кофе', style: GoogleFonts.notoSans(fontSize: 14, fontWeight: FontWeight.bold)),
+                            ),
+                          ),
+                          Positioned(
+                            top: 140,
+                            left: 232,
+                            width: 285,
+                            height: 32,
+                            child: Align(
+                              alignment: Alignment.bottomLeft,
+                              child: Text('200 руб', style: GoogleFonts.notoSans(fontSize: 14, fontWeight: FontWeight.bold)),
+                            ),
+                          ),
+                          Positioned(
+                            top: 160,
+                            left: 75,
+                            width: 285,
+                            height: 32,
+                            child: Align(
+                              alignment: Alignment.bottomLeft,
+                              child: Text('Вкусный зерновой кофеечек', style: GoogleFonts.notoSans(fontSize: 14, color: const Color(0xFF828282))),
+                            ),
+                          ),
+                          Positioned(
+                            left: 8,
+                            top: 140,
+                            child: Image.asset('Images/coffee.png', width: 61, height: 61),
+                          ),
+                        ],
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+            ],
+          ),
         ),
       ),
 
@@ -278,9 +578,8 @@ class _MyHomePageState extends State<MyHomePage> {
                     left: 300,
                     width: 30,
                     height: 30,
-                    child: IconButton(
-                      icon: const Icon(Icons.shopping_cart_outlined),
-                      onPressed: () => Poloski.currentState?.openEndDrawer(),
+                    child: Icon(
+                    Icons.shopping_cart_outlined
                     ),
                   ),
                   Positioned(
@@ -482,7 +781,7 @@ class _MyHomePageState extends State<MyHomePage> {
                             color: Color(0xFFF2C94C),
                             shape: BoxShape.rectangle,
                               borderRadius: BorderRadius.all(
-                              Radius.elliptical(20, 20), // Use your width and height values here
+                              Radius.elliptical(20, 20),
                               ),
                           ),
                           child: Align(
@@ -584,7 +883,7 @@ class _MyHomePageState extends State<MyHomePage> {
                             color: Color(0xFFF2C94C),
                             shape: BoxShape.rectangle,
                               borderRadius: BorderRadius.all(
-                              Radius.elliptical(20, 20), // Use your width and height values here
+                              Radius.elliptical(20, 20),
                               ),
                           ),
                           child: Align(
@@ -686,7 +985,7 @@ class _MyHomePageState extends State<MyHomePage> {
                             color: Color(0xFFF2C94C),
                             shape: BoxShape.rectangle,
                               borderRadius: BorderRadius.all(
-                              Radius.elliptical(20, 20), // Use your width and height values here
+                              Radius.elliptical(20, 20),
                               ),
                           ),
                           child: Align(
@@ -788,7 +1087,7 @@ class _MyHomePageState extends State<MyHomePage> {
                             color: Color(0xFFF2C94C),
                             shape: BoxShape.rectangle,
                               borderRadius: BorderRadius.all(
-                              Radius.elliptical(20, 20), // Use your width and height values here
+                              Radius.elliptical(20, 20),
                               ),
                           ),
                           child: Align(
