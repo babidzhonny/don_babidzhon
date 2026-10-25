@@ -30,22 +30,12 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
-  int _counter = 0;
-  void _incrementCounter() {
-    setState(() {
-      _counter++;
-    });
-  }
-
-//GestureDetector(
-//  onTap: () => Poloski.currentState?.openEndDrawer(),
-//),
-
+  var WhichDish = "";
   @override
   Widget build(BuildContext context) {
-    final GlobalKey<ScaffoldState> Poloski = GlobalKey<ScaffoldState>();
+    final GlobalKey<ScaffoldState> poloski = GlobalKey<ScaffoldState>();
     return Scaffold(
-      key: Poloski,
+      key: poloski,
       backgroundColor: const Color.fromARGB(255, 242, 242, 242),
       drawer: Drawer(
         child: Container(
@@ -240,18 +230,18 @@ class _MyHomePageState extends State<MyHomePage> {
                         ),
                         child: IconButton(
                           icon: Icon(Icons.chevron_left),
-                          onPressed: () => Poloski.currentState?.closeEndDrawer(),
+                          onPressed: () => poloski.currentState?.closeEndDrawer(),
                         ),
                       ),
                     ),
                     Positioned(
-                      top: 260,
+                      top: 200,
                       left: 45,
-                      width: 128,
-                      height: 19,
+                      width: 256,
+                      height: 64,
                       child: Align(
-                        alignment: Alignment.bottomCenter,
-                        child: Text('Сытый Питт', style: GoogleFonts.notoSans(fontSize: 14, fontWeight: FontWeight.bold)),
+                        alignment: Alignment.bottomLeft,
+                        child: Text('Сытый Питт', style: GoogleFonts.notoSans(fontSize: 24, fontWeight: FontWeight.bold)),
                       ),
                     ),
                     Positioned(
@@ -263,7 +253,7 @@ class _MyHomePageState extends State<MyHomePage> {
                     ),
                     Positioned(
                       top: 284,
-                      left: 72,
+                      left: 66,
                       width: 32,
                       height: 19,
                       child: Align(
@@ -273,7 +263,7 @@ class _MyHomePageState extends State<MyHomePage> {
                     ),
                     Positioned(
                       top: 284,
-                      left: 104,
+                      left: 97,
                       width: 48,
                       height: 19,
                       child: Align(
@@ -283,7 +273,7 @@ class _MyHomePageState extends State<MyHomePage> {
                     ),
                     Positioned(
                       top: 284,
-                      left: 164,
+                      left: 153,
                       width: 96,
                       height: 19,
                       child: Align(
@@ -303,11 +293,11 @@ class _MyHomePageState extends State<MyHomePage> {
                     ),
                     Positioned(
                       top: 269,
-                      left: 275,
-                      width: 72,
+                      left: 276,
+                      width: 60,
                       height: 44,
                       child: Align(
-                        alignment: Alignment.topCenter,
+                        alignment: Alignment.topLeft,
                         child: Text('300', style: GoogleFonts.notoSans(fontSize: 32, fontWeight: FontWeight.bold)),
                       ),
                     ),
@@ -340,7 +330,7 @@ class _MyHomePageState extends State<MyHomePage> {
                     ),
                     Positioned(
                       top: 300,
-                      left: 60,
+                      left: 45,
                       width: 285,
                       height: 128,
                       child: Align(
@@ -350,7 +340,7 @@ class _MyHomePageState extends State<MyHomePage> {
                     ),
                     Positioned(
                       top: 500,
-                      left: 33,
+                      left: 45,
                       width: 128,
                       height: 32,
                       child: Align(
@@ -360,7 +350,7 @@ class _MyHomePageState extends State<MyHomePage> {
                     ),
                     Positioned(
                       top: 500,
-                      left: 168,
+                      left: 180,
                       width: 128,
                       height: 32,
                       child: Align(
@@ -370,7 +360,7 @@ class _MyHomePageState extends State<MyHomePage> {
                     ),
                     Positioned(
                       top: 500,
-                      left: 256,
+                      left: 270,
                       width: 128,
                       height: 32,
                       child: Align(
@@ -380,7 +370,7 @@ class _MyHomePageState extends State<MyHomePage> {
                     ),
                     Positioned (
                       top: 556,
-                      left: 33,
+                      left: 45,
                       child: const SizedBox(
                         width: 50,
                         child: Divider(
@@ -413,7 +403,7 @@ class _MyHomePageState extends State<MyHomePage> {
                         children: [
                           Positioned(
                             top: 0,
-                            left: 75,
+                            left: 120,
                             width: 285,
                             height: 32,
                             child: Align(
@@ -423,17 +413,17 @@ class _MyHomePageState extends State<MyHomePage> {
                           ),
                           Positioned(
                             top: 0,
-                            left: 232,
+                            left: 45,
                             width: 285,
                             height: 32,
                             child: Align(
-                              alignment: Alignment.bottomLeft,
+                              alignment: Alignment.bottomRight,
                               child: Text('200 руб', style: GoogleFonts.notoSans(fontSize: 14, fontWeight: FontWeight.bold)),
                             ),
                           ),
                           Positioned(
                             top: 20,
-                            left: 75,
+                            left: 120,
                             width: 285,
                             height: 32,
                             child: Align(
@@ -442,7 +432,7 @@ class _MyHomePageState extends State<MyHomePage> {
                             ),
                           ),
                           Positioned(
-                            left: 8,
+                            left: 45,
                             top: 0,
                             child: Image.asset('Images/coffee.png', width: 61, height: 61),
                           ),
@@ -450,7 +440,7 @@ class _MyHomePageState extends State<MyHomePage> {
 
                           Positioned(
                             top: 70,
-                            left: 75,
+                            left: 120,
                             width: 285,
                             height: 32,
                             child: Align(
@@ -460,17 +450,17 @@ class _MyHomePageState extends State<MyHomePage> {
                           ),
                           Positioned(
                             top: 70,
-                            left: 232,
+                            left: 45,
                             width: 285,
                             height: 32,
                             child: Align(
-                              alignment: Alignment.bottomLeft,
+                              alignment: Alignment.bottomRight,
                               child: Text('200 руб', style: GoogleFonts.notoSans(fontSize: 14, fontWeight: FontWeight.bold)),
                             ),
                           ),
                           Positioned(
                             top: 90,
-                            left: 75,
+                            left: 120,
                             width: 285,
                             height: 32,
                             child: Align(
@@ -479,7 +469,7 @@ class _MyHomePageState extends State<MyHomePage> {
                             ),
                           ),
                           Positioned(
-                            left: 8,
+                            left: 45,
                             top: 70,
                             child: Image.asset('Images/coffee.png', width: 61, height: 61),
                           ),
@@ -487,7 +477,7 @@ class _MyHomePageState extends State<MyHomePage> {
 
                           Positioned(
                             top: 140,
-                            left: 75,
+                            left: 120,
                             width: 285,
                             height: 32,
                             child: Align(
@@ -497,17 +487,17 @@ class _MyHomePageState extends State<MyHomePage> {
                           ),
                           Positioned(
                             top: 140,
-                            left: 232,
+                            left: 45,
                             width: 285,
                             height: 32,
                             child: Align(
-                              alignment: Alignment.bottomLeft,
+                              alignment: Alignment.bottomRight,
                               child: Text('200 руб', style: GoogleFonts.notoSans(fontSize: 14, fontWeight: FontWeight.bold)),
                             ),
                           ),
                           Positioned(
                             top: 160,
-                            left: 75,
+                            left: 120,
                             width: 285,
                             height: 32,
                             child: Align(
@@ -516,7 +506,7 @@ class _MyHomePageState extends State<MyHomePage> {
                             ),
                           ),
                           Positioned(
-                            left: 8,
+                            left: 45,
                             top: 140,
                             child: Image.asset('Images/coffee.png', width: 61, height: 61),
                           ),
@@ -549,7 +539,7 @@ class _MyHomePageState extends State<MyHomePage> {
                     left: 45,
                     child: IconButton(
                       icon: Image.asset('Images/Menu.png', width: 30, height: 30),
-                      onPressed: () => Poloski.currentState?.openDrawer(),
+                      onPressed: () => poloski.currentState?.openDrawer(),
                     ),
                   ),
                   Positioned(
@@ -692,36 +682,39 @@ class _MyHomePageState extends State<MyHomePage> {
             child: ListView(
               children: [
                 GestureDetector(
-                  onTap: () => Poloski.currentState?.openEndDrawer(),
+                  onTap: () {
+                    poloski.currentState?.openEndDrawer();
+                    WhichDish = "Margo";
+                  },
                   child: Container(
-                    height: 1555,
+                    height: 321,
                     color: Color.fromARGB(255, 242, 242, 242),
                     child: Stack(
                       children: [
                       Positioned(
                         top: 0,
-                        child: Image.asset('Images/Margo.png', width: 375, height: 286),
+                        child: Image.asset('Images/Margo.png', width: 375, height: 165),
                       ),
                       Positioned(
-                        top: 260,
+                        top: 181,
                         left: 45,
                         width: 128,
                         height: 19,
                         child: Align(
-                          alignment: Alignment.bottomCenter,
+                          alignment: Alignment.bottomLeft,
                           child: Text('Дерзкая Марго', style: GoogleFonts.notoSans(fontSize: 14, fontWeight: FontWeight.bold)),
                         ),
                       ),
                       Positioned(
-                        top: 282,
+                        top: 198,
                         left: 45,
                         width: 14,
                         height: 14,
                         child: Icon(Icons.star_border),
                       ),
                       Positioned(
-                        top: 284,
-                        left: 72,
+                        top: 200,
+                        left: 66,
                         width: 32,
                         height: 19,
                         child: Align(
@@ -730,8 +723,8 @@ class _MyHomePageState extends State<MyHomePage> {
                         ),
                       ),
                       Positioned(
-                        top: 284,
-                        left: 104,
+                        top: 200,
+                        left: 97,
                         width: 48,
                         height: 19,
                         child: Align(
@@ -740,8 +733,8 @@ class _MyHomePageState extends State<MyHomePage> {
                         ),
                       ),
                       Positioned(
-                        top: 284,
-                        left: 164,
+                        top: 200,
+                        left: 153,
                         width: 96,
                         height: 19,
                         child: Align(
@@ -750,7 +743,7 @@ class _MyHomePageState extends State<MyHomePage> {
                         ),
                       ),
                       Positioned(
-                        top: 284,
+                        top: 200,
                         left: 263,
                         width: 16,
                         height: 19,
@@ -760,17 +753,17 @@ class _MyHomePageState extends State<MyHomePage> {
                         ),
                       ),
                       Positioned(
-                        top: 269,
-                        left: 275,
-                        width: 72,
+                        top: 177,
+                        left: 276,
+                        width: 60,
                         height: 44,
                         child: Align(
-                          alignment: Alignment.topCenter,
+                          alignment: Alignment.topLeft,
                           child: Text('300', style: GoogleFonts.notoSans(fontSize: 32, fontWeight: FontWeight.bold)),
                         ),
                       ),
                       Positioned(
-                        top: 328,
+                        top: 241,
                         left: 45,
                         width: 285,
                         // height: 45,
@@ -797,33 +790,46 @@ class _MyHomePageState extends State<MyHomePage> {
                         ),
                         ),
                       ),
+                      ],
+                    ),
+                  ),
+                ),
 
 
-
+                GestureDetector(
+                  onTap: () {
+                    poloski.currentState?.openEndDrawer();
+                    WhichDish = "HotGuy";
+                  },
+                  child: Container(
+                    height: 321,
+                    color: Color.fromARGB(255, 242, 242, 242),
+                    child: Stack(
+                      children: [
                       Positioned(
-                        top: 374,
-                        child: Image.asset('Images/HotGuy.png', width: 375, height: 286),
+                        top: 0,
+                        child: Image.asset('Images/HotGuy.png', width: 375, height: 165),
                       ),
                       Positioned(
-                        top: 634,
+                        top: 181,
                         left: 45,
                         width: 128,
                         height: 19,
                         child: Align(
-                          alignment: Alignment.bottomCenter,
+                          alignment: Alignment.bottomLeft,
                           child: Text('Горячий Парень', style: GoogleFonts.notoSans(fontSize: 14, fontWeight: FontWeight.bold)),
                         ),
                       ),
                       Positioned(
-                        top: 656,
+                        top: 198,
                         left: 45,
                         width: 14,
                         height: 14,
                         child: Icon(Icons.star_border),
                       ),
                       Positioned(
-                        top: 658,
-                        left: 72,
+                        top: 200,
+                        left: 66,
                         width: 32,
                         height: 19,
                         child: Align(
@@ -832,8 +838,8 @@ class _MyHomePageState extends State<MyHomePage> {
                         ),
                       ),
                       Positioned(
-                        top: 658,
-                        left: 104,
+                        top: 200,
+                        left: 97,
                         width: 48,
                         height: 19,
                         child: Align(
@@ -842,8 +848,8 @@ class _MyHomePageState extends State<MyHomePage> {
                         ),
                       ),
                       Positioned(
-                        top: 658,
-                        left: 164,
+                        top: 200,
+                        left: 153,
                         width: 96,
                         height: 19,
                         child: Align(
@@ -852,7 +858,7 @@ class _MyHomePageState extends State<MyHomePage> {
                         ),
                       ),
                       Positioned(
-                        top: 658,
+                        top: 200,
                         left: 263,
                         width: 16,
                         height: 19,
@@ -862,17 +868,17 @@ class _MyHomePageState extends State<MyHomePage> {
                         ),
                       ),
                       Positioned(
-                        top: 643,
-                        left: 275,
-                        width: 72,
+                        top: 177,
+                        left: 276,
+                        width: 60,
                         height: 44,
                         child: Align(
-                          alignment: Alignment.topCenter,
+                          alignment: Alignment.topLeft,
                           child: Text('300', style: GoogleFonts.notoSans(fontSize: 32, fontWeight: FontWeight.bold)),
                         ),
                       ),
                       Positioned(
-                        top: 702,
+                        top: 241,
                         left: 45,
                         width: 285,
                         // height: 45,
@@ -899,33 +905,47 @@ class _MyHomePageState extends State<MyHomePage> {
                         ),
                         ),
                       ),
+                      ],
+                    ),
+                  ),
+                ),
 
 
 
+                GestureDetector(
+                  onTap: () {
+                    poloski.currentState?.openEndDrawer();
+                    WhichDish = "Mia";
+                  },
+                  child: Container(
+                    height: 321,
+                    color: Color.fromARGB(255, 242, 242, 242),
+                    child: Stack(
+                      children: [
                       Positioned(
-                        top: 748,
-                        child: Image.asset('Images/Mia.png', width: 375, height: 286),
+                        top: 0,
+                        child: Image.asset('Images/Mia.png', width: 375, height: 165),
                       ),
                       Positioned(
-                        top: 1008,
+                        top: 181,
                         left: 45,
                         width: 128,
                         height: 19,
                         child: Align(
-                          alignment: Alignment.bottomCenter,
+                          alignment: Alignment.bottomLeft,
                           child: Text('Вкусняшка Миа', style: GoogleFonts.notoSans(fontSize: 14, fontWeight: FontWeight.bold)),
                         ),
                       ),
                       Positioned(
-                        top: 1034,
+                        top: 198,
                         left: 45,
                         width: 14,
                         height: 14,
                         child: Icon(Icons.star_border),
                       ),
                       Positioned(
-                        top: 1036,
-                        left: 72,
+                        top: 200,
+                        left: 66,
                         width: 32,
                         height: 19,
                         child: Align(
@@ -934,8 +954,8 @@ class _MyHomePageState extends State<MyHomePage> {
                         ),
                       ),
                       Positioned(
-                        top: 1036,
-                        left: 104,
+                        top: 200,
+                        left: 97,
                         width: 48,
                         height: 19,
                         child: Align(
@@ -944,8 +964,8 @@ class _MyHomePageState extends State<MyHomePage> {
                         ),
                       ),
                       Positioned(
-                        top: 1036,
-                        left: 164,
+                        top: 200,
+                        left: 153,
                         width: 96,
                         height: 19,
                         child: Align(
@@ -954,7 +974,7 @@ class _MyHomePageState extends State<MyHomePage> {
                         ),
                       ),
                       Positioned(
-                        top: 1036,
+                        top: 200,
                         left: 263,
                         width: 16,
                         height: 19,
@@ -964,17 +984,17 @@ class _MyHomePageState extends State<MyHomePage> {
                         ),
                       ),
                       Positioned(
-                        top: 1021,
-                        left: 275,
-                        width: 72,
+                        top: 177,
+                        left: 276,
+                        width: 60,
                         height: 44,
                         child: Align(
-                          alignment: Alignment.topCenter,
+                          alignment: Alignment.topLeft,
                           child: Text('300', style: GoogleFonts.notoSans(fontSize: 32, fontWeight: FontWeight.bold)),
                         ),
                       ),
                       Positioned(
-                        top: 1080,
+                        top: 241,
                         left: 45,
                         width: 285,
                         // height: 45,
@@ -1001,33 +1021,47 @@ class _MyHomePageState extends State<MyHomePage> {
                         ),
                         ),
                       ),
+                      ],
+                    ),
+                  ),
+                ),
+              
 
 
-
+                GestureDetector(
+                  onTap: () {
+                    poloski.currentState?.openEndDrawer();
+                    WhichDish = "Pitt";
+                  },
+                  child: Container(
+                    height: 321,
+                    color: Color.fromARGB(255, 242, 242, 242),
+                    child: Stack(
+                      children: [
                       Positioned(
-                        top: 1126,
-                        child: Image.asset('Images/Pitt.png', width: 375, height: 286),
+                        top: 0,
+                        child: Image.asset('Images/Pitt.png', width: 375, height: 165),
                       ),
                       Positioned(
-                        top: 1382,
+                        top: 181,
                         left: 45,
                         width: 128,
                         height: 19,
                         child: Align(
-                          alignment: Alignment.bottomCenter,
-                          child: Text('Сырный Питт', style: GoogleFonts.notoSans(fontSize: 14, fontWeight: FontWeight.bold)),
+                          alignment: Alignment.bottomLeft,
+                          child: Text('Сытый Питт', style: GoogleFonts.notoSans(fontSize: 14, fontWeight: FontWeight.bold)),
                         ),
                       ),
                       Positioned(
-                        top: 1412,
+                        top: 198,
                         left: 45,
                         width: 14,
                         height: 14,
                         child: Icon(Icons.star_border),
                       ),
                       Positioned(
-                        top: 1410,
-                        left: 72,
+                        top: 200,
+                        left: 66,
                         width: 32,
                         height: 19,
                         child: Align(
@@ -1036,8 +1070,8 @@ class _MyHomePageState extends State<MyHomePage> {
                         ),
                       ),
                       Positioned(
-                        top: 1410,
-                        left: 104,
+                        top: 200,
+                        left: 97,
                         width: 48,
                         height: 19,
                         child: Align(
@@ -1046,8 +1080,8 @@ class _MyHomePageState extends State<MyHomePage> {
                         ),
                       ),
                       Positioned(
-                        top: 1410,
-                        left: 164,
+                        top: 200,
+                        left: 153,
                         width: 96,
                         height: 19,
                         child: Align(
@@ -1056,7 +1090,7 @@ class _MyHomePageState extends State<MyHomePage> {
                         ),
                       ),
                       Positioned(
-                        top: 1410,
+                        top: 197,
                         left: 263,
                         width: 16,
                         height: 19,
@@ -1066,17 +1100,17 @@ class _MyHomePageState extends State<MyHomePage> {
                         ),
                       ),
                       Positioned(
-                        top: 1379,
-                        left: 275,
-                        width: 72,
+                        top: 177,
+                        left: 276,
+                        width: 60,
                         height: 44,
                         child: Align(
-                          alignment: Alignment.topCenter,
+                          alignment: Alignment.topLeft,
                           child: Text('300', style: GoogleFonts.notoSans(fontSize: 32, fontWeight: FontWeight.bold)),
                         ),
                       ),
                       Positioned(
-                        top: 1458,
+                        top: 241,
                         left: 45,
                         width: 285,
                         // height: 45,
