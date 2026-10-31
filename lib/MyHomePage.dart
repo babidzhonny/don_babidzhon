@@ -10,9 +10,9 @@ class MyHomePage extends StatefulWidget {
 
 class _MyHomePageState extends State<MyHomePage> {
   var WhichDish = "";
+  final GlobalKey<ScaffoldState> poloski = GlobalKey<ScaffoldState>();
   @override
   Widget build(BuildContext context) {
-    final GlobalKey<ScaffoldState> poloski = GlobalKey<ScaffoldState>();
     return Scaffold(
       key: poloski,
       backgroundColor: const Color.fromARGB(255, 242, 242, 242),
@@ -142,7 +142,6 @@ class _MyHomePageState extends State<MyHomePage> {
                 top: 236,
                 left: 250,
                 width: 45,
-                // height: 45,
                 child: Container(
                   width: 22,
                   height: 22,
@@ -171,7 +170,7 @@ class _MyHomePageState extends State<MyHomePage> {
         width: double.infinity,
         child: Material(
           color: Color.fromARGB(255, 242, 242, 242),
-          child: Builder( // <-- 1. Add this Builder widget right here
+          child: Builder(
             builder: (context) {
               return Stack(
                 children: [
@@ -803,7 +802,6 @@ class _MyHomePageState extends State<MyHomePage> {
                         top: 241,
                         left: 45,
                         width: 285,
-                        // height: 45,
                         child: Container(
                           width: 285,
                           height: 45,
@@ -918,7 +916,6 @@ class _MyHomePageState extends State<MyHomePage> {
                         top: 241,
                         left: 45,
                         width: 285,
-                        // height: 45,
                         child: Container(
                           width: 285,
                           height: 45,
@@ -1034,7 +1031,6 @@ class _MyHomePageState extends State<MyHomePage> {
                         top: 241,
                         left: 45,
                         width: 285,
-                        // height: 45,
                         child: Container(
                           width: 285,
                           height: 45,
@@ -1150,7 +1146,6 @@ class _MyHomePageState extends State<MyHomePage> {
                         top: 241,
                         left: 45,
                         width: 285,
-                        // height: 45,
                         child: Container(
                           width: 285,
                           height: 45,
