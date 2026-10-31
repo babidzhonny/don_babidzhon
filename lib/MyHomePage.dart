@@ -30,7 +30,7 @@ class _MyHomePageState extends State<MyHomePage> {
           whichDish: WhichDish,
           onClose: () {
             poloski.currentState?.closeEndDrawer();
-            WhichDish = "";
+            setState(() => WhichDish = "");
           },
         ),
       ),
@@ -57,7 +57,7 @@ class _MyHomePageState extends State<MyHomePage> {
                 image: 'Images/Margo.png',
                 name: 'Дерзкая Марго',
                 onTap: () {
-                  WhichDish = "Margo";
+                  setState(() => WhichDish = "Margo");
                   poloski.currentState?.openEndDrawer();
                 },
               ),
@@ -65,7 +65,7 @@ class _MyHomePageState extends State<MyHomePage> {
                 image: 'Images/HotGuy.png',
                 name: 'Горячий Парень',
                 onTap: () {
-                  WhichDish = "HotGuy";
+                  setState(() => WhichDish = "HotGuy");
                   poloski.currentState?.openEndDrawer();
                 },
               ),
@@ -81,7 +81,7 @@ class _MyHomePageState extends State<MyHomePage> {
                 image: 'Images/Pitt.png',
                 name: 'Сытый Питт',
                 onTap: () {
-                  WhichDish = "Pitt";
+                  setState(() => WhichDish = "Pitt");
                   poloski.currentState?.openEndDrawer();
                 },
               ),
